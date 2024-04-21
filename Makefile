@@ -22,7 +22,7 @@ $(KEYBOARDS):
 	# cd qmk_firmware; qmk lint -km $(USER) -kb $(NAME_$@)
 
 	# run build
-	make BUILD_DIR=$(shell pwd)/build -j1 -C qmk_firmware $(NAME_$@):$(USER)
+	make BUILD_DIR=$(shell pwd)/build -j1 -C qmk_firmware $@:$(USER)
 
 clean:
 	rm -rf ./qmk_firmware/
