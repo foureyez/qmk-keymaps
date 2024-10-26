@@ -78,13 +78,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /*
  * QWERTY
  * ,-----------------------------------------.                    ,-----------------------------------------.
- * |  F12 |  F1  |  F2  |  F3  |  F4  |  F5  |                    |  F6  |  F7  |  F8  |  F9  |  F10 | F11  |
+ * |  F11 |  F1  |  F2  |  F3  |  F4  |  F5  |                    |  F6  |  F7  |  F8  |  F9  |  F10 | F12  |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |      |      |  (   |   =  |   )  |      |                    |   !  |   @  |   #  |   $  |   %  |  &   |
+ * | MUTE |      |  (   |   =  |   )  |      |                    |   !  |   @  |   #  |   $  |   %  |  &   |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |      |   '  |  {   |   _  |   }  |  "   |-------.    ,-------| Left | Down |  Up  | Right|      |      |
+ * | VOL+ |   '  |  {   |   _  |   }  |  "   |-------.    ,-------| Left | Down |  Up  | Right|      |      |
  * |------+------+------+------+------+------|       |    |       |------+------+------+------+------+------|
- * |      |   -  |  [   |      |   ]  |  +   |-------|    |-------|      |      |      |      |      |      |
+ * | VOL- |   -  |  [   |      |   ]  |  +   |-------|    |-------|      |      |      |      |      |      |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
  *            |      |      |      |      | /       /       \      \  |      |      |      |      |
  *            |      |      |      |      |/       /         \      \ |      |      |      |      |
@@ -92,12 +92,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 
 [_SPCL] = LAYOUT(
-    KC_F12,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,                        KC_F6,    KC_F7,    KC_F8,   KC_F9,    KC_F10,   KC_F11,
-    _______,  _______, KC_LPRN, KC_EQUAL,KC_RPRN, _______,                      KC_EXLM,  KC_AT,    KC_HASH, KC_DLR,   KC_PERC,  KC_AMPR,
-    _______,  KC_QUOT, KC_LCBR, KC_UNDS, KC_RCBR, KC_DQT,                       KC_LEFT,  KC_DOWN,  KC_UP,   KC_RIGHT, VIM_SAVE, VIM_CMD,
-    _______,  KC_MINS,KC_LBRC, _______, KC_RBRC, KC_PLUS, _______,    _______, _______,  _______,  _______, _______,  _______,  VIM_QUIT,
-                       _______, _______, _______, _______, _______,    _______, _______,  _______,  _______, _______
+    KC_F11,   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                        KC_F6,    KC_F7,    KC_F8,   KC_F9,    KC_F10,  KC_F12,
+    KC_MUTE,  _______, KC_LPRN, KC_EQUAL,KC_RPRN, _______,                      KC_EXLM,  KC_AT,    KC_HASH, KC_DLR,   KC_PERC, KC_AMPR,
+    KC_VOLU,  KC_QUOT, KC_LCBR, KC_UNDS, KC_RCBR, KC_DQT,                       KC_LEFT,  KC_DOWN,  KC_UP,   KC_RIGHT, VIM_CMD,VIM_QUIT,
+    KC_VOLD,  KC_MINS, KC_LBRC, _______, KC_RBRC, KC_PLUS, _______,    _______, _______,  _______,  _______, _______,  _______, _______,
+                       _______, _______, _______, _______, VIM_SAVE,    _______, _______,  _______,  _______, _______
 )
+
 };
 
 #if defined(ENCODER_MAP_ENABLE)
@@ -131,3 +132,4 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     }
     return 1;
 }
+
