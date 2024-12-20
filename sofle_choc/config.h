@@ -27,3 +27,24 @@
 #define RGB_MATRIX_SLEEP     // turn off effects when suspended
 #define SPLIT_TRANSPORT_MIRROR             // If LED_MATRIX_KEYPRESSES or LED_MATRIX_KEYRELEASES is enabled, you also will want to enable SPLIT_TRANSPORT_MIRROR
 #define RGB_MATRIX_MAXIMUM_BRIGHTNESS 100  // limits maximum brightness of LEDs (max 255). Higher may cause the controller to crash.
+
+#undef LOCKING_SUPPORT_ENABLE
+#undef LOCKING_RESYNC_ENABLE
+
+#define NO_MUSIC_MODE
+#define LAYER_STATE_8BIT // Max 8 layers allowed 
+// #define LAYER_STATE_16BIT // Max 16 layers allowed
+
+#undef RGBLIGHT_ANIMATIONS
+#undef RGBLIGHT_EFFECT_BREATHING
+#undef RGBLIGHT_EFFECT_RAINBOW_MOOD
+#undef RGBLIGHT_EFFECT_RAINBOW_SWIRL
+#undef RGBLIGHT_EFFECT_SNAKE
+#undef RGBLIGHT_EFFECT_KNIGHT
+#undef RGBLIGHT_EFFECT_CHRISTMAS
+#undef RGBLIGHT_EFFECT_STATIC_GRADIENT
+#undef RGBLIGHT_EFFECT_RGB_TEST
+#undef RGBLIGHT_EFFECT_ALTERNATING
+#undef RGBLIGHT_EFFECT_TWINKLE
+
+#define TAPPING_TERM 140
